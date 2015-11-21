@@ -4,12 +4,17 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.moowork.gradle:gradle-gulp-plugin:0.10")
     }
 }
 
+apply plugin: "com.moowork.gulp"
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -26,6 +31,12 @@ repositories {
     mavenCentral()
 }
 
+//configure your version of node.
+node {
+    // Version of node to use.
+    version = '5.0.0'
+    download = true
+}
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
@@ -39,6 +50,13 @@ eclipse {
          containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
     }
 }
+
+//make sure node and gulp are installed before calling the build task in gulpfile.js
+gulp_build.dependsOn 'installGulp'
+gulp_build.dependsOn 'npmInstall'
+
+//make sure gulp generates CSS for the build
+bootRun.dependsOn gulp_build
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.7'

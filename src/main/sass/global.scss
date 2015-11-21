@@ -1,0 +1,34 @@
+//set our customizations
+
+//I'll use the Dotsub colors
+$dotsubBlue:            #0b506f;
+$dotsubBlueHighlight:   #336880;
+$dotsubMainBlue:        #2281aa;
+$white: #fff;
+
+//custom links
+$linkColor:             $dotsubBlueHighlight;
+$linkColorHover:        darken($linkColor, 15%);
+
+//the primary button
+$brand-primary: $dotsubBlue;
+$btn-primary-bg: $dotsubBlueHighlight;
+
+//custom navbar
+$navbar-inverse-bg: $dotsubBlue;
+$navbar-inverse-color: $white;
+$navbar-inverse-link-hover-color: darken($navbar-inverse-color, 15%);
+$navbar-inverse-link-color: $white;
+$navbar-inverse-link-active-color: $white;
+$navbar-inverse-link-active-bg: $dotsubMainBlue;
+$navbar-inverse-toggle-hover-bg: $dotsubMainBlue;
+$navbar-inverse-toggle-icon-bar-bg: $white;
+$navbar-inverse-toggle-border-color: $white;
+
+$panel-default-text:$white;
+$panel-default-heading-bg: $dotsubBlue;
+
+//import bootstrap
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+

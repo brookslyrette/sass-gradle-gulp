@@ -1,0 +1,23 @@
+{
+  "name": "demo-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brookslyrette/spring-boot-demo-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brookslyrette/spring-boot-demo-starter/issues"
+  },
+  "homepage": "https://github.com/brookslyrette/spring-boot-demo-starter",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.5",
+    "gulp-sass": "^2.1.0"
+  }
+}
